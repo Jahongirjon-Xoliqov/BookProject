@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReadingNowViewController" customModule="PracticeProjectNo1" customModuleProvider="target">
             <connections>
+                <outlet property="allTimeBestsellersView" destination="sOx-eT-86M" id="TT7-ks-9T5"/>
                 <outlet property="currentReadingBookView" destination="wAV-nI-dy5" id="tg1-tk-tIl"/>
                 <outlet property="moreToExploreView" destination="DbP-75-Y3j" id="Htv-Uk-QH2"/>
                 <outlet property="scrollView" destination="V6g-5q-cQk" id="rGo-Lh-1eB"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-5q-cQk">
-                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="851.99999999999977"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAV-nI-dy5" customClass="CurrentReadingBookView" customModule="PracticeProjectNo1" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="327.66666666666669"/>
@@ -39,23 +40,33 @@
                                 <constraint firstAttribute="height" constant="300" placeholder="YES" id="Ugm-Dq-3wE"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOx-eT-86M">
-                            <rect key="frame" x="0.0" y="647.66666666666663" width="393" height="399.99999999999989"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOx-eT-86M" customClass="AllTimeBestsellersView" customModule="PracticeProjectNo1" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="647.66666666666663" width="393" height="392.99999999999989"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="400" id="dmg-LU-S3c"/>
+                                <constraint firstAttribute="width" secondItem="sOx-eT-86M" secondAttribute="height" id="Vor-AY-hjx"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAI-vF-bm0" customClass="ReadingGoalsView" customModule="PracticeProjectNo1" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="1040.6666666666667" width="393" height="491"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="OAI-vF-bm0" secondAttribute="height" multiplier="0.8" id="UD8-nX-lLa"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="sOx-eT-86M" secondAttribute="bottom" id="4lT-MP-tAS"/>
                         <constraint firstItem="wAV-nI-dy5" firstAttribute="top" secondItem="V6g-5q-cQk" secondAttribute="top" id="54k-Cp-6zI"/>
                         <constraint firstItem="DbP-75-Y3j" firstAttribute="leading" secondItem="V6g-5q-cQk" secondAttribute="leading" id="HMf-Ba-tTh"/>
                         <constraint firstItem="DbP-75-Y3j" firstAttribute="width" secondItem="V6g-5q-cQk" secondAttribute="width" id="NU9-oT-7n9"/>
+                        <constraint firstAttribute="bottom" secondItem="OAI-vF-bm0" secondAttribute="bottom" id="YCu-yq-nmo"/>
+                        <constraint firstAttribute="trailing" secondItem="OAI-vF-bm0" secondAttribute="trailing" id="YOT-Wk-Qub"/>
+                        <constraint firstItem="OAI-vF-bm0" firstAttribute="top" secondItem="sOx-eT-86M" secondAttribute="bottom" id="bPn-iQ-uBN"/>
                         <constraint firstItem="sOx-eT-86M" firstAttribute="leading" secondItem="V6g-5q-cQk" secondAttribute="leading" id="dbi-ZN-nx3"/>
                         <constraint firstItem="sOx-eT-86M" firstAttribute="top" secondItem="DbP-75-Y3j" secondAttribute="bottom" constant="20" id="exA-Nb-4ml"/>
                         <constraint firstItem="wAV-nI-dy5" firstAttribute="width" secondItem="V6g-5q-cQk" secondAttribute="width" id="hXo-Si-4sF"/>
                         <constraint firstAttribute="trailing" secondItem="wAV-nI-dy5" secondAttribute="trailing" id="lhH-mm-Gs4"/>
+                        <constraint firstItem="OAI-vF-bm0" firstAttribute="leading" secondItem="V6g-5q-cQk" secondAttribute="leading" id="nQF-an-Gj1"/>
                         <constraint firstAttribute="trailing" secondItem="sOx-eT-86M" secondAttribute="trailing" id="qUW-zj-Gc7"/>
                         <constraint firstAttribute="trailing" secondItem="DbP-75-Y3j" secondAttribute="trailing" id="rtE-Qo-eJn"/>
                         <constraint firstItem="wAV-nI-dy5" firstAttribute="leading" secondItem="V6g-5q-cQk" secondAttribute="leading" id="wvf-Dh-0cr"/>
@@ -66,7 +77,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="V6g-5q-cQk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DZL-3Z-1Y3"/>
+                <constraint firstItem="V6g-5q-cQk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DZL-3Z-1Y3"/>
                 <constraint firstAttribute="bottom" secondItem="V6g-5q-cQk" secondAttribute="bottom" id="DxD-Ij-Isz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V6g-5q-cQk" secondAttribute="trailing" id="gTG-ne-yVs"/>
                 <constraint firstItem="V6g-5q-cQk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oh2-Ka-A89"/>

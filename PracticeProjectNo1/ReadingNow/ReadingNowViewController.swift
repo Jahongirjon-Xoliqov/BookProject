@@ -12,6 +12,7 @@ class ReadingNowViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var currentReadingBookView: CurrentReadingBookView!
     @IBOutlet weak var moreToExploreView: MoreToExploreView!
+    @IBOutlet weak var allTimeBestsellersView: AllTimeBestsellersView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

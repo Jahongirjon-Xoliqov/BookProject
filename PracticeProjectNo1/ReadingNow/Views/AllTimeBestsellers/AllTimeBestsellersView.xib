@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllTimeBestsellersView" customModule="PracticeProjectNo1" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Dwh-JG-jXD" id="438-AF-tbn"/>
+                <outlet property="rightImageView" destination="bnu-1n-dqV" id="7J6-H4-Fs9"/>
+                <outlet property="seeAllLabel" destination="QRE-Zz-FzB" id="IFl-bh-1Sc"/>
+                <outlet property="selfView" destination="iN0-l3-epB" id="NuJ-qc-51K"/>
+                <outlet property="separatorView" destination="qi8-GO-ZVa" id="h1P-CH-cJX"/>
+                <outlet property="titleLabel" destination="8Xy-xp-KGU" id="42A-6c-OPv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="464"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xy-xp-KGU">
+                    <rect key="frame" x="30" y="89" width="333" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Dwh-JG-jXD">
+                    <rect key="frame" x="0.0" y="134.33333333333337" width="393" height="184.66666666666663"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LxK-Sp-yJM">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi8-GO-ZVa">
+                    <rect key="frame" x="30" y="349" width="333" height="1"/>
+                    <color key="backgroundColor" systemColor="separatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="UQK-Ob-w8t"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-Zz-FzB">
+                    <rect key="frame" x="30" y="350" width="42" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Bv8-Tl-50d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-1n-dqV">
+                    <rect key="frame" x="77" y="352" width="10" height="46.333333333333314"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Fsp-XW-cqU"/>
+                        <constraint firstAttribute="width" constant="10" id="fOe-3w-dwo"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qi8-GO-ZVa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="2of-pu-SI9"/>
+                <constraint firstItem="qi8-GO-ZVa" firstAttribute="top" secondItem="Dwh-JG-jXD" secondAttribute="bottom" constant="30" id="5IM-Yx-2wb"/>
+                <constraint firstItem="bnu-1n-dqV" firstAttribute="leading" secondItem="QRE-Zz-FzB" secondAttribute="trailing" constant="5" id="Fl0-Q8-b24"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qi8-GO-ZVa" secondAttribute="trailing" constant="30" id="FvR-dz-Xqd"/>
+                <constraint firstItem="8Xy-xp-KGU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="K8v-zT-vbP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Dwh-JG-jXD" secondAttribute="trailing" id="ZBd-7l-gTX"/>
+                <constraint firstItem="8Xy-xp-KGU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="cEI-b1-Xc0"/>
+                <constraint firstItem="QRE-Zz-FzB" firstAttribute="top" secondItem="qi8-GO-ZVa" secondAttribute="bottom" id="dtX-8S-tsd"/>
+                <constraint firstItem="bnu-1n-dqV" firstAttribute="top" secondItem="qi8-GO-ZVa" secondAttribute="bottom" id="dxM-d9-wOs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8Xy-xp-KGU" secondAttribute="trailing" constant="30" id="esU-Jh-ta9"/>
+                <constraint firstItem="Dwh-JG-jXD" firstAttribute="top" secondItem="8Xy-xp-KGU" secondAttribute="bottom" constant="25" id="f07-iT-174"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QRE-Zz-FzB" secondAttribute="bottom" constant="30" id="fZF-c9-nmA"/>
+                <constraint firstItem="Dwh-JG-jXD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fZM-1z-Sg1"/>
+                <constraint firstItem="QRE-Zz-FzB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="gru-fr-aPv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="118.32061068702289" y="-86.619718309859152"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

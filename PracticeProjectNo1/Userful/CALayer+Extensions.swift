@@ -14,4 +14,12 @@ extension CALayer {
         shadowOpacity = 0.2
         shadowRadius = 5
     }
+    
+    func setBookShadow(offset: CGSize) {
+        shadowColor = UIColor.black.cgColor
+        shadowOffset = offset
+        shadowOpacity = 0.4
+        shadowRadius = 10
+    }
+    
 }
