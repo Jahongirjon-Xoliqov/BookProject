@@ -41,13 +41,13 @@ extension NSAttributedString {
         paragraphStyle.alignment = align
         paragraphStyle.lineSpacing = lineSpace
         
-        var attrs: [NSAttributedString.Key: Any] = [
+        let attrs: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.font: font,
             NSAttributedString.Key.foregroundColor: color,
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
         ]
         
-        var mutableAttrs = NSMutableAttributedString(string: text, attributes: attrs)
+        let mutableAttrs = NSMutableAttributedString(string: text, attributes: attrs)
         mutableAttrs.addAttribute(NSAttributedString.Key.kern, value: letterSpace, range: NSRange(location: 0, length: mutableAttrs.length - 1))
         
         return mutableAttrs
