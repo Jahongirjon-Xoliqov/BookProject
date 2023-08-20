@@ -8,12 +8,9 @@
 import UIKit
 
 extension NSAttributedString {
+    
     static func getMainFont(text: String, size: CGFloat, color: UIColor) -> NSAttributedString {
-        let attrs: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont(name: "Athelas-Regular", size: size) ?? .systemFont(ofSize: size),
-            NSAttributedString.Key.foregroundColor: color
-        ]
-        return NSAttributedString(string: text, attributes: attrs)
+        create(text: text, font: .mainRegular(with: size), color: color, align: .left, letterSpace: 0, lineSpace: 0)
     }
     
     static func getMainBoldFont(text: String,
@@ -21,15 +18,7 @@ extension NSAttributedString {
                                 color: UIColor,
                                 align: NSTextAlignment = .left) -> NSAttributedString {
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = align
-        
-        let attrs: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont(name: "Athelas-Bold", size: size) ?? .systemFont(ofSize: size),
-            NSAttributedString.Key.foregroundColor: color,
-            NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ]
-        return NSAttributedString(string: text, attributes: attrs)
+        create(text: text, font: .mainBold(with: size), color: color, align: align, letterSpace: 0, lineSpace: 0)
     }
     
     
@@ -37,15 +26,31 @@ extension NSAttributedString {
                               size: CGFloat,
                               color: UIColor,
                               align: NSTextAlignment = .left) -> NSAttributedString {
+        create(text: text, font: .defaultRegular(with: size), color: color, align: align, letterSpace: 0, lineSpace: 0)
+        
+    }
+    
+    static func create(text: String,
+                       font: UIFont,
+                       color: UIColor,
+                       align: NSTextAlignment,
+                       letterSpace: CGFloat,
+                       lineSpace: CGFloat) -> NSAttributedString {
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = align
+        paragraphStyle.lineSpacing = lineSpace
         
-        let attrs: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: size),
+        var attrs: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: font,
             NSAttributedString.Key.foregroundColor: color,
-            NSAttributedString.Key.paragraphStyle: paragraphStyle
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
         ]
-        return NSAttributedString(string: text, attributes: attrs)
+        
+        var mutableAttrs = NSMutableAttributedString(string: text, attributes: attrs)
+        mutableAttrs.addAttribute(NSAttributedString.Key.kern, value: letterSpace, range: NSRange(location: 0, length: mutableAttrs.length - 1))
+        
+        return mutableAttrs
+        
     }
 }
