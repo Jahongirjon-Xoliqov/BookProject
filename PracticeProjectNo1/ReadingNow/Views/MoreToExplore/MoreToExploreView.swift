@@ -53,14 +53,27 @@ class MoreToExploreView: UIView {
         
         titleLabel.attributedText = NSAttributedString.getMainBoldFont(text: "More to Explore", size: 25, color: .black)
         
-        let fictionView = BookGenresBannerView(frame: CGRect(origin: .zero, size: CGSize(width: verticalStackView.frame.width, height: verticalStackView.frame.width/2)))
+        set(model: nil)
+    }
+    
+    func set(model: [MoreToExploreModel?]?) {
         
-        let nonFictionView = BookGenresBannerView(frame: CGRect(origin: .zero, size: CGSize(width: verticalStackView.frame.width, height: verticalStackView.frame.width/2)))
+        guard let model else {
+            startLoading()
+            return
+        }
         
-        verticalStackView.addArrangedSubview(nonFictionView)
-        verticalStackView.addArrangedSubview(fictionView)
-        fictionView.heightAnchor.constraint(equalToConstant: verticalStackView.frame.width/2).isActive = true
+        endLoading()
         
+        model.forEach {
+            let newGenre = BookGenresBannerView(frame: CGRect(origin: .zero, size: CGSize(width: verticalStackView.frame.width, height: verticalStackView.frame.width/2)))
+            newGenre.set($0)
+            verticalStackView.addArrangedSubview(newGenre)
+            newGenre.heightAnchor.constraint(equalToConstant: verticalStackView.frame.width/2).isActive = true
+        }
+        
+        setNeedsDisplay()
         
     }
+    
 }

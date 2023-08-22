@@ -74,6 +74,8 @@ class CurrentReadingBookView: UIView {
         darkBottomGradientLayer?.frame = bounds
         selfView.layer.insertSublayer(darkBottomGradientLayer ?? CALayer(), at: 0)
         
+        set(model: nil)
+        
     }
     
     private func configureInstructorButton() {
@@ -90,6 +92,21 @@ class CurrentReadingBookView: UIView {
     }
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    func set(model: CurrentModel?) {
+        
+        guard let model else {
+            startLoading()
+            return
+        }
+        
+        endLoading()
+        
+        bookCoverImageView.downloadImage(from: model.coverUrl)
+        bookTitleLabel.attributedText = NSAttributedString.getSystemFont(text: model.title, size: 14, color: .black)
+        completionPercentLabel.attributedText = NSAttributedString.getSystemFont(text: "\(model.completed)%", size: 12, color: UIColor.systemGray)
         
     }
     

@@ -15,6 +15,15 @@ class BookGenresBannerView: UIView {
     @IBOutlet weak var secondBookImageView: UIImageView!
     @IBOutlet weak var thirdBookImageView: UIImageView!
     
+    var genre: MoreToExploreModel?
+    
+    convenience init() {
+        self.init(frame: .zero)
+        inialisingState()
+        addParent(customView: selfView)
+        configureUI()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         inialisingState()
@@ -58,6 +67,23 @@ class BookGenresBannerView: UIView {
         
         titleLabel.numberOfLines = 0
         titleLabel.attributedText = NSAttributedString.getMainBoldFont(text: "Fiction &\nLiterature", size: 18, color: .black)
+    }
+    
+    func set(_ genre: MoreToExploreModel?) {
+        
+        guard let genre else {
+            return
+        }
+        
+        self.genre = genre
+        
+        titleLabel.attributedText = NSAttributedString.getMainBoldFont(text: genre.title, size: 18, color: .black)
+        
+        firstBookImageView.downloadImage(from: genre.firstBookCoverUrl)
+        secondBookImageView.downloadImage(from: genre.secondBookCoverUrl)
+        thirdBookImageView.downloadImage(from: genre.thirdBookCoverUrl)
+        
+        
     }
     
 }
