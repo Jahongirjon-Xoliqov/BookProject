@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A121CAD2A9A42FC006EB8C9 /* SearchBooksAPIMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A121CAC2A9A42FC006EB8C9 /* SearchBooksAPIMock.json */; };
+		0A121CB02A9A4911006EB8C9 /* SearchBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A121CAF2A9A4911006EB8C9 /* SearchBookModel.swift */; };
+		0A121CB32A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A121CB12A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.swift */; };
+		0A121CB42A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A121CB22A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.xib */; };
+		0A121CB72A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A121CB52A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.swift */; };
+		0A121CB82A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A121CB62A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.xib */; };
+		0A121CBB2A9A4B77006EB8C9 /* RecentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A121CB92A9A4B77006EB8C9 /* RecentCollectionViewCell.swift */; };
+		0A121CBC2A9A4B77006EB8C9 /* RecentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A121CBA2A9A4B77006EB8C9 /* RecentCollectionViewCell.xib */; };
+		0A121CBF2A9A4D6A006EB8C9 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A121CBD2A9A4D6A006EB8C9 /* HeaderCollectionReusableView.swift */; };
 		0A12A6A42A90C690006A5B3F /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A12A6A32A90C690006A5B3F /* NSAttributedString+Extensions.swift */; };
 		0A12A6AA2A90CCA5006A5B3F /* Athelas-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A12A6A62A90CCA5006A5B3F /* Athelas-BoldItalic.ttf */; };
 		0A12A6AB2A90CCA5006A5B3F /* Athelas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A12A6A72A90CCA5006A5B3F /* Athelas-Bold.ttf */; };
@@ -83,6 +92,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A121CAC2A9A42FC006EB8C9 /* SearchBooksAPIMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchBooksAPIMock.json; sourceTree = "<group>"; };
+		0A121CAF2A9A4911006EB8C9 /* SearchBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookModel.swift; sourceTree = "<group>"; };
+		0A121CB12A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A121CB22A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionsCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A121CB52A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A121CB62A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A121CB92A9A4B77006EB8C9 /* RecentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A121CBA2A9A4B77006EB8C9 /* RecentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A121CBD2A9A4D6A006EB8C9 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		0A12A6A32A90C690006A5B3F /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		0A12A6A62A90CCA5006A5B3F /* Athelas-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0A12A6A72A90CCA5006A5B3F /* Athelas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-Bold.ttf"; sourceTree = "<group>"; };
@@ -171,6 +189,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A121CA92A9A425E006EB8C9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A121CB12A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.swift */,
+				0A121CB22A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.xib */,
+				0A121CB52A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.swift */,
+				0A121CB62A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.xib */,
+				0A121CB92A9A4B77006EB8C9 /* RecentCollectionViewCell.swift */,
+				0A121CBA2A9A4B77006EB8C9 /* RecentCollectionViewCell.xib */,
+				0A121CBD2A9A4D6A006EB8C9 /* HeaderCollectionReusableView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A121CAE2A9A48F7006EB8C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A121CAF2A9A4911006EB8C9 /* SearchBookModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0A12A6A52A90CC8D006A5B3F /* Athelas */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +248,7 @@
 				0A395BC62A92701900560FCD /* MockData.json */,
 				0A43B35F2A9510A40075D1EB /* ReadingNowAPIMock.json */,
 				0A3662032A97B45D00F26BAF /* LibraryAPIMock.json */,
+				0A121CAC2A9A42FC006EB8C9 /* SearchBooksAPIMock.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -375,6 +416,8 @@
 		0A8A325B2A9098B100EAE298 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0A121CAE2A9A48F7006EB8C9 /* Models */,
+				0A121CA92A9A425E006EB8C9 /* Cells */,
 				0A8A326B2A909A4E00EAE298 /* SearchViewController.swift */,
 				0A8A326C2A909A4E00EAE298 /* SearchViewController.xib */,
 			);
@@ -492,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A395BCA2A92933800560FCD /* MockData.json in Resources */,
+				0A121CBC2A9A4B77006EB8C9 /* RecentCollectionViewCell.xib in Resources */,
 				0A12A6AD2A90CCA5006A5B3F /* Athelas-Regular.ttf in Resources */,
 				0A72FD3F2A91439A004DF68A /* BooksCollectionViewCell.xib in Resources */,
 				0A12A6BD2A90E1DD006A5B3F /* BookGenresBannerView.xib in Resources */,
@@ -500,10 +544,13 @@
 				0A8A326A2A909A3A00EAE298 /* BookStoreViewController.xib in Resources */,
 				0A72FD3B2A914055004DF68A /* AllTimeBestsellersView.xib in Resources */,
 				0A3662042A97B45D00F26BAF /* LibraryAPIMock.json in Resources */,
+				0A121CAD2A9A42FC006EB8C9 /* SearchBooksAPIMock.json in Resources */,
+				0A121CB42A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.xib in Resources */,
 				0A43B3602A9510A40075D1EB /* ReadingNowAPIMock.json in Resources */,
 				0A8A32662A909A2D00EAE298 /* LibraryViewController.xib in Resources */,
 				0A72FD4A2A9154C8004DF68A /* ReadingTimeProgressView.xib in Resources */,
 				0A8A324E2A908FA900EAE298 /* Assets.xcassets in Resources */,
+				0A121CB82A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.xib in Resources */,
 				0A8A32622A909A1C00EAE298 /* ReadingNowViewController.xib in Resources */,
 				0A8A32492A908FA800EAE298 /* Main.storyboard in Resources */,
 				0A72FD442A914B4F004DF68A /* ReadingGoalsView.xib in Resources */,
@@ -540,8 +587,10 @@
 				0A12A6B72A90E095006A5B3F /* MoreToExploreView.swift in Sources */,
 				0A72FD4C2A915BA2004DF68A /* KeepReadingButton.swift in Sources */,
 				0A8A32732A90A9E200EAE298 /* Constants.swift in Sources */,
+				0A121CBB2A9A4B77006EB8C9 /* RecentCollectionViewCell.swift in Sources */,
 				0A12A6A42A90C690006A5B3F /* NSAttributedString+Extensions.swift in Sources */,
 				0A72FD3E2A91439A004DF68A /* BooksCollectionViewCell.swift in Sources */,
+				0A121CB72A9A4ACA006EB8C9 /* YourLibraryCollectionViewCell.swift in Sources */,
 				0A8A32772A90ACD200EAE298 /* CurrentReadingBookView.swift in Sources */,
 				0A4693AA2A91DCAB00D33016 /* ActionsCollectionViewCell.swift in Sources */,
 				0A395BD92A92A9C600560FCD /* LoadingView.swift in Sources */,
@@ -553,18 +602,21 @@
 				0A8A32422A908FA800EAE298 /* AppDelegate.swift in Sources */,
 				0A43B3782A95169C0075D1EB /* MoreToExplore+CoreDataClass.swift in Sources */,
 				0A8A32612A909A1C00EAE298 /* ReadingNowViewController.swift in Sources */,
+				0A121CB32A9A4AB3006EB8C9 /* SuggestionsCollectionViewCell.swift in Sources */,
 				0A8A326D2A909A4E00EAE298 /* SearchViewController.swift in Sources */,
 				0A395BD32A929EA200560FCD /* DownloadTask.swift in Sources */,
 				0A8A325E2A90995100EAE298 /* MainTabbarController.swift in Sources */,
 				0A3661FD2A97AD4A00F26BAF /* UserDefaults+Extensions.swift in Sources */,
 				0A43B37A2A95169C0075D1EB /* ReadingGoals+CoreDataClass.swift in Sources */,
 				0A43B3742A95169C0075D1EB /* Current+CoreDataClass.swift in Sources */,
+				0A121CB02A9A4911006EB8C9 /* SearchBookModel.swift in Sources */,
 				0A8A32652A909A2D00EAE298 /* LibraryViewController.swift in Sources */,
 				0A43B3802A9518FE0075D1EB /* CoreDataManager.swift in Sources */,
 				0A8A32442A908FA800EAE298 /* SceneDelegate.swift in Sources */,
 				0A12A6B42A90DEC4006A5B3F /* CALayer+Extensions.swift in Sources */,
 				0A72FD462A914D5C004DF68A /* CircleProgressView.swift in Sources */,
 				0A8A324C2A908FA800EAE298 /* PracticeProjectNo1.xcdatamodeld in Sources */,
+				0A121CBF2A9A4D6A006EB8C9 /* HeaderCollectionReusableView.swift in Sources */,
 				0A43B37C2A95169C0075D1EB /* AllTimeBestsellers+CoreDataClass.swift in Sources */,
 				0A395BC42A9262D600560FCD /* UIFon+Extensions.swift in Sources */,
 				0A8A32692A909A3A00EAE298 /* BookStoreViewController.swift in Sources */,

@@ -27,4 +27,19 @@ class APIManager {
         
     }
     
+    static func requestBooks(completion: @escaping([BookModel])->Void) {
+        
+        guard let path = Bundle.main.path(forResource: "SearchBooksAPIMock", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let json = try Data(contentsOf: url)
+            let books = try JSONDecoder().decode([BookModel].self, from: json)
+            completion(books)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
 }
