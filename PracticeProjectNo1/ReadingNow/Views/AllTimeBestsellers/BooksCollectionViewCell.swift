@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BooksCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var coverImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -18,6 +21,11 @@ class BooksCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
         contentView.layer.setBookShadow(offset: CGSize(width: 0, height: 10))
         
+    }
+    
+    func set(coverImageUrl: String?) {
+        let url = URL(string: coverImageUrl ?? "")
+        coverImageView.sd_setImage(with: url)
     }
 
 }

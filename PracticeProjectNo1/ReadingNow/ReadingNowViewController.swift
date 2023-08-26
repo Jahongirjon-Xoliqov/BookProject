@@ -14,21 +14,43 @@ class ReadingNowViewController: UIViewController {
     @IBOutlet weak var moreToExploreView: MoreToExploreView!
     @IBOutlet weak var allTimeBestsellersView: AllTimeBestsellersView!
     
-    private var readingNowModel: ReadingNowModel?
+    private var readingNowModel: ReadingNowModel? {
+        didSet {
+            self.currentReadingBookView.set(model: readingNowModel?.current)
+            self.moreToExploreView.set(model: readingNowModel?.moreToExplore)
+            self.allTimeBestsellersView.set(readingNowModel?.allTimeBestsellers)
+        }
+    }
+    
+    var navController: MainNavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Reading Now"
-        (navigationController as! MainNavigationController).addProfileIcon()
+        navController = (self.navigationController as! MainNavigationController)
+        navController?.addProfileIcon()
+        navController?.userIconTappedAction = { [weak self] in
+            guard let self else { return }
+            self.openProfileEditController()
+        }
         requestModel()
     }
     
     private func requestModel() {
-        APIManager.requestReadingNow { model in
-            self.readingNowModel = model
-            self.currentReadingBookView.set(model: model.current)
-            self.moreToExploreView.set(model: model.moreToExplore)
+        
+        if UD.getDataResourceAsDB() {
+            self.readingNowModel = CoreDataManager.shared.getSavedReadingNowModel()
+        } else {
+            APIManager.requestReadingNow { model in
+                self.readingNowModel = model
+            }
         }
+        
+    }
+    
+    private func openProfileEditController() {
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        present(vc, animated: true)
     }
     
 }

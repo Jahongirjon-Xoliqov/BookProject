@@ -86,4 +86,16 @@ class BookGenresBannerView: UIView {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        selfView.backgroundColor = .systemGray5
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        selfView.backgroundColor = .systemBackground
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        selfView.backgroundColor = .systemBackground
+    }
+    
 }

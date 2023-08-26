@@ -9,6 +9,8 @@ import UIKit
 
 class MainNavigationController: UINavigationController {
     
+    var userIconTappedAction: (()->Void)?
+    
     override func viewDidLoad() {
         //you can configure any style here
         navigationBar.prefersLargeTitles = true
@@ -20,7 +22,7 @@ class MainNavigationController: UINavigationController {
     }
     
     @objc private func userIconTapped() {
-        print("taaaap")
+        userIconTappedAction?()
     }
     
     static func attach(_ controller: UIViewController?) -> MainNavigationController {

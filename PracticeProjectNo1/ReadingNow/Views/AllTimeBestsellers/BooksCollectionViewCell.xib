@@ -30,6 +30,9 @@
                 <constraint firstAttribute="bottom" secondItem="s8f-XE-k1y" secondAttribute="bottom" id="X67-wc-6Mw"/>
             </constraints>
             <size key="customSize" width="190" height="213"/>
+            <connections>
+                <outlet property="coverImageView" destination="s8f-XE-k1y" id="56L-uU-8gF"/>
+            </connections>
             <point key="canvasLocation" x="227.48091603053433" y="77.112676056338032"/>
         </collectionViewCell>
     </objects>

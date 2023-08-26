@@ -60,6 +60,10 @@ class CurrentReadingBookView: UIView {
         bookCoverImageView.image = UIImage(named: "swiftexpert")
         bookCoverImageView.layer.setBookShadow()
         
+        let interaction = UIContextMenuInteraction(delegate: self)
+        bookCoverImageView.isUserInteractionEnabled = true
+        bookCoverImageView.addInteraction(interaction)
+        
         bookTitleLabel.attributedText = NSAttributedString.getSystemFont(text: "Expert_Swift_v1.0.0", size: 14, color: .black)
         
         completionPercentLabel.attributedText = NSAttributedString.getSystemFont(text: "42%", size: 12, color: UIColor.systemGray)
@@ -107,6 +111,41 @@ class CurrentReadingBookView: UIView {
         bookCoverImageView.downloadImage(from: model.coverUrl)
         bookTitleLabel.attributedText = NSAttributedString.getSystemFont(text: model.title, size: 14, color: .black)
         completionPercentLabel.attributedText = NSAttributedString.getSystemFont(text: "\(model.completed)%", size: 12, color: UIColor.systemGray)
+        
+    }
+    
+}
+
+extension CurrentReadingBookView: UIContextMenuInteractionDelegate {
+    
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        let shareAction = UIAction(title: "Share PDF", image: UIImage(systemName: "square.and.arrow.up")) { action in
+            print(action.title)
+        }
+        let wantRead = UIAction(title: "Add to Want to Read", image: UIImage(systemName: "list.star")) { action in
+            print(action.title)
+        }
+        let addToCollection = UIAction(title: "Add to Collections", image: UIImage(systemName: "list.star")) { action in
+            print(action.title)
+        }
+        let markAsFinished = UIAction(title: "Mark as Finished", image: UIImage(systemName: "checklist.checked")) { action in
+            print(action.title)
+        }
+        let rename = UIAction(title: "Rename...", image: UIImage(systemName: "character.cursor.ibeam")) { action in
+            print(action.title)
+        }
+        let remove = UIAction(title: "Remove", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
+            print(action.title)
+        }
+        
+        let shareMenu = UIMenu(options: .displayInline, children: [shareAction])
+        let simpleMenu = UIMenu(options: .displayInline, children: [wantRead, addToCollection, markAsFinished])
+        let renameMenu = UIMenu(options: .displayInline, children: [rename])
+        let removeMenu = UIMenu(options: .displayInline, children: [shareMenu, simpleMenu, rename, remove])
+
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            removeMenu
+        }
         
     }
     

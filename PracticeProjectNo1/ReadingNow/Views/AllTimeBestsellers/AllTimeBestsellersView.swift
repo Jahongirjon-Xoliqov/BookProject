@@ -18,6 +18,12 @@ class AllTimeBestsellersView: UIView {
     
     private var darkBottomGradientLayer: CAGradientLayer?
     
+    var allTimeBestsellersModel: [AllTimeBestsellersModel?]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         inialisingState()
@@ -71,6 +77,10 @@ class AllTimeBestsellersView: UIView {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
     
+    func set(_ model: [AllTimeBestsellersModel]?) {
+        self.allTimeBestsellersModel = model
+    }
+    
 }
 
 extension AllTimeBestsellersView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -84,7 +94,7 @@ extension AllTimeBestsellersView: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        self.allTimeBestsellersModel?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,7 +102,8 @@ extension AllTimeBestsellersView: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BooksCollectionViewCell.id(), for: indexPath) as? BooksCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+        let book = self.allTimeBestsellersModel?[indexPath.row]
+        cell.set(coverImageUrl: book?.coverImageUrl)
         return cell
         
     }
